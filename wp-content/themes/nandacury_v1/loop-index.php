@@ -27,7 +27,7 @@
 
 
 	<section class="block_wpr adv adv_02">
-		<?php get_template_part('advertising', '730x90'); ?>
+		<?php get_template_part('advertising', '2n730x90'); ?>
 	</section><!-- .adv_02 -->
 
 	<section class="block_wpr block_02">

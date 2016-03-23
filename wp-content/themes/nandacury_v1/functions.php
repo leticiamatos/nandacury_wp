@@ -133,6 +133,11 @@ function html5blank_header_scripts()
         wp_enqueue_script('jqueryui');
 
         // Scripts minify
+        wp_register_script('fancybox', get_template_directory_uri() . '/script/jquery.fancybox/jquery.fancybox.pack.js', array(), '1.0');
+        // Enqueue Scripts
+        wp_enqueue_script('fancybox');
+
+        // Scripts minify
         wp_register_script('utilsz', get_template_directory_uri() . '/script/utils.js', array(), '1.0.0');
         // Enqueue Scripts
         wp_enqueue_script('utilsz');
@@ -191,6 +196,11 @@ function html5blank_styles()
     wp_register_style('font-face', get_template_directory_uri() . '/style/font-face.css', array(), '1.0');
     // Register CSS
     wp_enqueue_style('font-face');
+
+    // Custom CSS
+    wp_register_style('fancybox', get_template_directory_uri() . '/script/jquery.fancybox/jquery.fancybox.css', array(), '1.0');
+    // Register CSS
+    wp_enqueue_style('fancybox');
 
     // Custom CSS
     wp_register_style('screen', get_template_directory_uri() . '/style/screen.css', array(), '1.0');
@@ -260,23 +270,96 @@ function remove_width_attribute( $html ) {
 // If Dynamic Sidebar Exists
 if (function_exists('register_sidebar'))
 {
-    // Define Sidebar Widget Area Post 160x600
-    register_sidebar(array(
-        'name' => 'Posts Recentes - Sidebar Post',
-        'description' => __('Description for this widget-area...', 'html5blank'),
-        'id' => 'widget-post',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3 class="sidebar_title">',
-        'after_title' => '</h3>'
-    ));
-
     // Define Sidebar Widget 1
     // Define Sidebar Widget 730x90
     register_sidebar(array(
-        'name' => 'Banner 730 &times; 90 px',
+        'name' => 'HOME - Banner 01 - 730 &times; 90 px',
         'description' => __('Description for this widget-area...', 'html5blank'),
-        'id' => 'widget-area-730x90',
+        'id' => 'home-banner-1-widget-area-730x90',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'CABELOS - Banner 01 - 730 &times; 90 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'cabelos-banner-1-widget-area-730x90',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'BELEZA - Banner 01 - 730 &times; 90 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'beleza-banner-1-widget-area-730x90',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'TENDÊNCIAS - Banner 01 - 730 &times; 90 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'tendencias-banner-1-widget-area-730x90',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'VEGAN - Banner 01 - 730 &times; 90 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'vegan-banner-1-widget-area-730x90',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+
+
+
+    register_sidebar(array(
+        'name' => 'HOME - Banner 02 - 730 &times; 90 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'home-banner-2-widget-area-730x90',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'CABELOS - Banner 02 - 730 &times; 90 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'cabelos-banner-2-widget-area-730x90',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'BELEZA - Banner 02 - 730 &times; 90 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'beleza-banner-2-widget-area-730x90',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'TENDÊNCIAS - Banner 02 - 730 &times; 90 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'tendencias-banner-2-widget-area-730x90',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'VEGAN - Banner 02 - 730 &times; 90 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'vegan-banner-2-widget-area-730x90',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="adv_title">',
@@ -286,9 +369,45 @@ if (function_exists('register_sidebar'))
     // Define Sidebar Widget Area 2
     // Define Sidebar Widget Area 250x250
     register_sidebar(array(
-        'name' => 'Banner 250 &times; 250 px',
+        'name' => 'HOME - Banner 250 &times; 250 px',
         'description' => __('Description for this widget-area...', 'html5blank'),
-        'id' => 'widget-area-250x250',
+        'id' => 'home-widget-area-250x250',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'CABELOS - Banner 250 &times; 250 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'cabelos-widget-area-250x250',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'BELEZA - Banner 250 &times; 250 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'beleza-widget-area-250x250',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'TENDÊNCIAS - Banner 250 &times; 250 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'tendencias-widget-area-250x250',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'VEGAN - Banner 250 &times; 250 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'vegan-widget-area-250x250',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="adv_title">',
@@ -298,9 +417,45 @@ if (function_exists('register_sidebar'))
     // Define Sidebar Widget Area 3
     // Define Sidebar Widget Area 200x400
     register_sidebar(array(
-        'name' => 'Banner 240 &times; 400 px',
+        'name' => 'HOME - Banner 240 &times; 400 px',
         'description' => __('Description for this widget-area...', 'html5blank'),
-        'id' => 'widget-area-240x400',
+        'id' => 'home-widget-area-240x400',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'CABELOS - Banner 240 &times; 400 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'cabelos-widget-area-240x400',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'BELEZA - Banner 240 &times; 400 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'beleza-widget-area-240x400',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'TENDÊNCIAS - Banner 240 &times; 400 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'tendencias-widget-area-240x400',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'VEGAN - Banner 240 &times; 400 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'vegan-widget-area-240x400',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="adv_title">',
@@ -310,9 +465,45 @@ if (function_exists('register_sidebar'))
     // Define Sidebar Widget Area 4
     // Define Sidebar Widget Area 160x600
     register_sidebar(array(
-        'name' => 'Banner 160 &times; 600 px',
+        'name' => 'HOME - Banner 160 &times; 600 px',
         'description' => __('Description for this widget-area...', 'html5blank'),
-        'id' => 'widget-area-160x600',
+        'id' => 'home-widget-area-160x600',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'CABELOS - Banner 160 &times; 600 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'cabelos-widget-area-160x600',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'BELEZA - Banner 160 &times; 600 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'beleza-widget-area-160x600',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'TENDÊNCIAS - Banner 160 &times; 600 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'tendencias-widget-area-160x600',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'VEGAN - Banner 160 &times; 600 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'vegan-widget-area-160x600',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="adv_title">',
@@ -322,12 +513,59 @@ if (function_exists('register_sidebar'))
     // Define Sidebar Widget Area 5
     // Define Sidebar Widget Area 470x60
     register_sidebar(array(
-        'name' => 'Banner 470 &times; 60 px',
+        'name' => 'HOME - Banner 470 &times; 60 px',
         'description' => __('Description for this widget-area...', 'html5blank'),
-        'id' => 'widget-area-470x60',
+        'id' => 'home-widget-area-470x60',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'CABELOS - Banner 470 &times; 60 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'cabelos-widget-area-470x60',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'BELEZA - Banner 470 &times; 60 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'beleza-widget-area-470x60',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'TENDÊNCIAS - Banner 470 &times; 60 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'tendencias-widget-area-470x60',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+    register_sidebar(array(
+        'name' => 'VEGAN - Banner 470 &times; 60 px',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'vegan-widget-area-470x60',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="adv_title">',
+        'after_title' => '</h3>'
+    ));
+
+    // Define Sidebar Widget Area Post 160x600
+    register_sidebar(array(
+        'name' => 'Posts Recentes - Sidebar Post',
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'widget-post',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="sidebar_title">',
         'after_title' => '</h3>'
     ));
 

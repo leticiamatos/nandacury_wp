@@ -42,5 +42,20 @@ $(function() {
 	$(window).scroll(function () {
 		scrollMenuPanel();
  	});
+
+ 	// Fancybox
+	if ( $(".gallery")) {
+		$(".gallery img").each(function( ) {
+			//console.log(output);
+	  		$(this).parent().addClass('fancybox');
+	  		$(this).parent().attr( "data-fancybox-group", "gallery" );
+		});
+	}
+
+	// Fancybox Galery modal
+	$(".fancybox").fancybox({
+		openEffect  : 'none',
+		closeEffect	: 'none'
+	});
 })
 

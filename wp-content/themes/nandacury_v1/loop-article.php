@@ -4,6 +4,10 @@
 	<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
 		<figure>
 			<?php the_post_thumbnail(); // Declare pixel size you need inside the array ?>
+			<div class="thumb_bg_wpr">
+				<div class="thumb_bg_wpr_img">
+				</div>
+			</div>
 		</figure>
 	<?php else: ?>
 		<figure class="noimg">

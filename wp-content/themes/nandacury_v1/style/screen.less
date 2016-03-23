@@ -174,8 +174,14 @@ body.home{
 body.header_normal{
   .header_fixed{
     position: fixed;
-    top: 0;
+    top: 30px;
     .shadow;
+  }
+  .header_secondary_social{
+    position: fixed;
+    height: 30px;
+    top:0; 
+    background-position: top;
   }
 }
 body.not-top{
@@ -188,7 +194,7 @@ body.not-top{
 }
 .header_secondary_social{
   height: 33px;
-  background: url(../img/menu_fixed_bg.png) center bottom repeat-x;
+  background: #fff url(../img/menu_fixed_bg.png) center bottom repeat-x;
 
   .item,
   li a{
@@ -284,19 +290,6 @@ h1.logo{
   min-height: 60px;
   background: #fff;
   
-  li:nth-of-type(1) a{
-    background: url(../img/border-bottom-red.png) bottom repeat-x;
-  }
-  li:nth-of-type(2) a{
-    background: url(../img/border-bottom-yellow.png) bottom repeat-x;
-  }
-  li:nth-of-type(3) a{
-    background: url(../img/border-bottom-blue.png) bottom repeat-x;
-  }
-  li:nth-of-type(4) a{
-    background: url(../img/border-bottom-green.png) bottom repeat-x;
-  }
-
   .col2-3{ position: relative;}
   .separator{
     position: absolute;
@@ -318,15 +311,34 @@ h1.logo{
         font-weight: lighter;
         text-transform: uppercase;
         font-size: 24px;
-        height: 50px;
+        height: 60px;
         line-height: 60px;
+        background-position: bottom;
+        background-repeat: repeat-x;
+        background-image: none;
         &:hover{
-          height: 60px !important;
           opacity: 1;
         }
       }
     }
   }
+  li.current-menu-item:nth-of-type(1) a,
+  li:nth-of-type(1) a:hover{
+    background-image: url(../img/border-bottom-red.png);
+  }
+  li.current-menu-item:nth-of-type(2) a,
+  li:nth-of-type(2) a:hover{
+    background-image: url(../img/border-bottom-yellow.png);
+  }
+  li.current-menu-item:nth-of-type(3) a,
+  li:nth-of-type(3) a:hover{
+    background-image: url(../img/border-bottom-blue.png);
+  }
+  li.current-menu-item:nth-of-type(4) a,
+  li:nth-of-type(4) a:hover{
+    background-image: url(../img/border-bottom-green.png);
+  }
+
 }
 
 /* Advertising */
@@ -416,15 +428,34 @@ h1.logo{
     position: relative;
 
     figure{
-      background: @cGray2 url(../img/img_hover.png) center no-repeat;
-      background-size: 100% auto;
+      background-color: @cGray2;
       width: 100%;
       display: block;
+      position: relative;
+
+      .thumb_bg_wpr{
+        position: absolute;
+        z-index: 10;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+      }
+      .thumb_bg_wpr_img{
+        background: url(../img/img_hover.png) center no-repeat;
+        background-size: 100% auto;
+        width: 100%;
+        height: 100%;
+      }
       img{
+        position: relative;
+        z-index: 11;
         display: block;
         width: 100%;
         opacity: 1;
         .transition;
+
       }
     }
     .cat{
@@ -441,9 +472,9 @@ h1.logo{
       padding-bottom: 5px;
 
       display: inline-block;
-      background-position: center -20px;
       background-repeat: repeat-x;
-      background-image: url(../img/border-bottom-red-thin.png);
+      background-position: center bottom;
+      background-image: none;
       line-height: 28px;
       opacity: 1;
       .transition;
@@ -460,12 +491,27 @@ h1.logo{
       z-index: 15;
     }
     &:hover{
-      img{ opacity: 0.6;}
+      img{ 
+        opacity: 0.6;
+      }
+      .thumb_bg_wpr_img{
+        -webkit-animation: avia_pop_small 0.5s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275); /* Safari 4+ */
+        animation: avia_pop_small 0.5s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275); /* IE 10+ */
+      }
       .title{
-        background-position: center bottom;
+        background-image: url(../img/border-bottom-red-thin.png);
         opacity: 0.7;
       }
     }
+  }
+
+  @keyframes avia_pop_small {
+    0%   { transform:rotate(-175deg) scale(0.2);  }
+    100% { transform:rotate(0deg) scale(1);   }
+  }
+  @-webkit-keyframes avia_pop_small {
+    0%   { -webkit-transform:rotate(-175deg) scale(0.2);  }
+    100% { -webkit-transform:rotate(0deg) scale(1);  }
   }
 
   &.primary {
@@ -687,28 +733,29 @@ aside{
     font-size: 18px;
     line-height: 20px;
     a{
-      display: block;
+      display: inline-block;
       background-position: center -20px ;
       background-repeat: repeat-x;
-      background-image: url(../img/border-bottom-red-thin.png);
+      background-position: bottom;
+      background-image: none;
       color: @cGray3;
       &:hover{
-        background-position: bottom;
+        background-image: url(../img/border-bottom-red-thin.png);
       }
     }
   }
 }
 body.category.category-cabelos{
-  .latest.posts li a{background-image: url(../img/border-bottom-red-thin.png);}
+  .latest.posts li a:hover{background-image: url(../img/border-bottom-red-thin.png);}
 }
 body.category.category-beleza{
-  .latest.posts li a{background-image: url(../img/border-bottom-yellow-thin.png);}
+  .latest.posts li a:hover{background-image: url(../img/border-bottom-yellow-thin.png);}
 }
 body.category.category-tendencias{
-  .latest.posts li a{background-image: url(../img/border-bottom-blue-thin.png);}
+  .latest.posts li a:hover{background-image: url(../img/border-bottom-blue-thin.png);}
 }
 body.category.category-vegan{
-  .latest.posts li a{background-image: url(../img/border-bottom-green-thin.png);}
+  .latest.posts li a:hover{background-image: url(../img/border-bottom-green-thin.png);}
 }
 
 .block_submenu{
@@ -760,14 +807,12 @@ body.category.category-vegan{
       background-image: none;
       padding: 0 !important;
       margin: 0 !important;
-      height: 25px;
+      height: 35px;
       &:hover{
-        height: 32px;
         background-image: url(../img/border-bottom-red-thin.png);
       }
     }
     &.ui-tabs-active a{
-        height: 25px;
         background-image: url(../img/border-bottom-red-thin.png);
     }
   }
@@ -808,10 +853,9 @@ h3{
 }
 
 .subcategory.link{
-  height: 35px;
+  height: 50px;
   &.active,
   &:hover{
-    height: 40px;
     background-image: url(../img/border-bottom-red-thin.png);
   }
 }
@@ -847,26 +891,16 @@ body.category{
   }
   .primary.menu{
     a{
-      background-position: center -20px;
-      &:hover{
-        background-position: bottom;
-        height: 50px !important;
-      }
-    }
-    li.current-menu-item a{
+      height: 60px;
       background-position: bottom;
     }
   }
 }
 
-
 body.category.category-beleza{
   .block_breadcrumbs .menu.category a{
     height: 35px;
-    &.active,
-    &:hover{
-      background-image: url(../img/border-bottom-yellow-thin.png) !important;
-    }
+    background-image: url(../img/border-bottom-yellow-thin.png) !important;
   }
   .category.image{
     display: block;
@@ -875,14 +909,14 @@ body.category.category-beleza{
     border-left: 8px solid @cY;
   }
 }
-body.category.category-beleza .post_list .title a,
-.post.category-beleza .title{
+body.category.category-beleza .post_list .title a:hover,
+.post.category-beleza:hover .title{
   background-image: url(../img/border-bottom-yellow-thin.png) !important;
 }
 
 body.category.category-cabelos{
   .block_breadcrumbs .menu.category a{
-    height: 35px;
+    height: 50px;
     &.active,
     &:hover{
       background-image: url(../img/border-bottom-red-thin.png) !important;
@@ -895,14 +929,14 @@ body.category.category-cabelos{
     border-left: 8px solid @cR;
   }
 }
-body.category.category-cabelos .post_list .title a,
-.post.category-cabelos .title{
+body.category.category-cabelos .post_list .title a:hover,
+.post.category-cabelos:hover .title{
   background-image: url(../img/border-bottom-red-thin.png) !important;
 }
 
 body.category.category-tendencias{
   .block_breadcrumbs .menu.category a{
-    height: 35px;
+    height: 50px;
     &:hover{
       background-image: url(../img/border-bottom-blue-thin.png) !important;
     }
@@ -914,14 +948,14 @@ body.category.category-tendencias{
     border-left: 8px solid @cB;
   }
 }
-body.category.category-tendencias .post_list .title a,
-.post.category-tendencias .title{
+body.category.category-tendencias .post_list .title a:hover,
+.post.category-tendencias:hover .title{
   background-image: url(../img/border-bottom-blue-thin.png) !important;
 }
 
 body.category.category-vegan{
   .block_breadcrumbs .menu.category a{
-    height: 35px;
+    height: 50px;
     &.active,
     &:hover{
       background-image: url(../img/border-bottom-green-thin.png) !important;
@@ -934,8 +968,8 @@ body.category.category-vegan{
     border-left: 8px solid @cG;
   }
 }
-body.category.category-vegan .post_list .title a,
-.post.category-vegan .title{
+body.category.category-vegan .post_list .title a:hover,
+.post.category-vegan:hover .title{
   background-image: url(../img/border-bottom-green-thin.png) !important;
 }
 
@@ -987,13 +1021,9 @@ body.category.category-vegan .post_list .title a,
     .subcategory.link,
     .subcategory.list a{
       margin: 0 3px;
-      height: 35px;
+      height: 50px;
       background-position: bottom;
       background-repeat: repeat-x;
-      &.active,
-      &:hover{
-        height: 40px;
-      }
     }
 
   }
@@ -1012,7 +1042,7 @@ body.single{
         width: 100%;
       }
     }
-    .title{
+    .post_title{
       padding-top: 10px;
       font-size: 28px;
       background-image: none !important;
