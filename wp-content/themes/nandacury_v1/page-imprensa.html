@@ -1,0 +1,49 @@
+<?php 
+
+/* Template Name: Imprensa */
+
+?>
+
+<?php get_header(); ?>
+
+
+	<section class="block_wpr block_page">
+		<div class="block_cntt">
+			<div class="col2-3">
+		
+<?php	// If Home - As mulheres Mapa
+	$args = array( 
+		'posts_per_page' => -1,
+		'cat'		 => 14
+	);
+
+	$posts_maps = get_posts( $args );
+
+	//while ( $query->have_posts() ) :
+	foreach ( $posts_maps as $post ) : setup_postdata( $post );  
+?>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<div class="post_wpr">
+				<!--figure>
+					<img src="#" />
+				</figure-->
+
+				<p class="date"><?php the_title( ); ?></p>
+				<p class="date"><?php the_content( $post->ID ); ?></p>
+			</div>				
+		</article>
+
+<?php
+	endforeach;
+  	wp_reset_postdata();
+?>
+
+			</div>
+
+
+			<span class="clear"></span>
+		</div><!-- .block_cntt -->
+	</section><!-- .block_01 -->
+
+
+<?php get_footer(); ?>

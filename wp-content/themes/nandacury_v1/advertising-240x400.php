@@ -1,4 +1,5 @@
-<?php if ( is_home() ): ?>
+<?php 
+/*<?php if ( is_home() ): ?>
 
 	<div class="adv adv_240x400">
 		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('home-widget-area-240x400')) ?>
@@ -35,3 +36,13 @@
 	</div>
 
 <?php endif; ?>
+
+*/
+?>
+
+<div class="adv adv_240x400">
+	<a href="#">
+	 <img src="<?php echo get_template_directory_uri(); ?>/img/z_lixo/adv04.jpg" />
+		
+	</a>
+</div><!-- .block_cntt -->

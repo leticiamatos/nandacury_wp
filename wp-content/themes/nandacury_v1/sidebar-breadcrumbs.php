@@ -5,7 +5,7 @@
 	<div class="block_cntt">
 
 		<nav class="menu category">
-			<h3>Você está em: <?php the_title(); ?></h3>
+			<h3>Você está em: <strong><?php the_title(); ?></strong></h3>
 			<span class="separator bar">&nbsp;</span>
 			<span class="clear"></span>
 		</nav>

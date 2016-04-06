@@ -1,7 +1,17 @@
+<?php 
+	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+	$args = array( 
+		'post_type' => 'post', 
+		'posts_per_page' => 10, 
+  		'paged'          => $paged
+		 ); 
+	query_posts($args);
+?>
 
 <?php
 	$n = 1;
 ?>
+<?php //if ($home_query->have_posts()): while ($home_query->have_posts()) : the_post(); ?>
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 	<?php if ($n == 1): ?>
@@ -89,4 +99,4 @@
 	<!-- /article -->
 
 <?php endif; ?>
-
+<?php wp_reset_postdata(); ?>

@@ -43,49 +43,69 @@
 
 		<section class="general <?php echo $cat_parent; ?>">
 		<?php if (is_home()): ?>
+			<?php
+				$a = array('1' => '1', '2'=> '2', '3'=> '3');
+				$random_n = array_rand($a, 1); 
+			?>
 			<section class="home_panel">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/index_abertura.jpg" />
+				<img src="<?php echo get_template_directory_uri(); ?>/img/index_abertura_0<?php echo $random_n; ?>.jpg" />
 			</section>
 		<?php endif; ?>
 			
-
-			<section class="block_wpr header_secondary_social">
-				<div class="block_cntt">
-					<div class="left menu col1-2">
-	<?php 
-		wp_nav_menu( $args = array('menu' => 'social') );
-	?>
-				  	</div>
-
-				  <div class="menu right col1-2">
-				  	<div class="menu_wpr">
-					  	<button class="menu_link">a</button>
-					  	<nav class="menu_cntt">
-	<?php 
-		wp_nav_menu( $args = array('menu' => 'secondary') );
-	?>
-					  	</nav>
-				  	</div>
-				  	<div class="right menu language_menu">
-				  		<a href="#" class="item active">pt</a>
-				  		<a href="#" class="item">en</a>
-				  	</div>
-				  </div>
-
-				  <span class="clear"></span>
-
-			  </div>
-			</section><!-- .fixed_header -->
-
 			<div class="gap"></div>
 			
 			<section class="block_wpr adv adv_01">
 				<?php get_template_part('advertising', '730x90'); ?>
 			</section><!-- .adv_01 -->
 			
-
 			<div class="fixed relative">
+				<section class="block_wpr header_secondary_social">
+					<div class="block_cntt">
+						<div class="left menu col1-2">
+		<?php 
+			wp_nav_menu( $args = array('menu' => 'social') );
+		?>
+					  	</div>
+
+					  <div class="menu right col1-2">
+					  	<div class="menu_wpr">
+						  	<button class="menu_link">a</button>
+						  	<nav class="menu_cntt">
+		<?php 
+			wp_nav_menu( $args = array('menu' => 'secondary') );
+		?>
+						  	</nav>
+					  	</div>
+					  	<div class="right menu language_menu">
+	<!-- 				  		<a href="#" class="item active">pt</a>
+					  		<a href="#" class="item">en</a> -->
+					  		<?php if ( function_exists( 'mltlngg_display_switcher' ) ) mltlngg_display_switcher(); ?>
+					  	</div>
+					  </div>
+
+					  <span class="clear"></span>
+
+				  </div>
+				</section><!-- .fixed_header -->
+
+
 				<section class="block_wpr block_menu header_fixed">
+					<div class="menu responsive wpr">
+						<a class="menu_link"></a>
+						<div class="menu responsive cntt">
+							<nav class="menu responsive_primary">
+<?php 
+	wp_nav_menu( $args = array('menu' => 'primary') );
+?>
+							</nav>
+							<nav class="menu responsive_secondary">
+<?php 
+	wp_nav_menu( $args = array('menu' => 'secondary') );
+?>
+							</nav>
+
+						</div>
+					</div>
 					<div class="block_cntt">
 						<div class="col1-3">
 		

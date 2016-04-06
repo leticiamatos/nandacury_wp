@@ -10,7 +10,7 @@
 						<!--figure>
 							<img src="#" />
 						</figure-->
-						<h2 class="title"><?php the_title(); ?></h2>
+						<!--h2 class="post_title"><?php the_title(); ?></h2-->
 
 						<div class="text">
 							<?php the_content(); ?>

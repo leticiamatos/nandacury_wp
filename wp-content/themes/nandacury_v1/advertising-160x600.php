@@ -1,4 +1,5 @@
-			
+<?php 
+/*			
 <?php if ( is_home() ): ?>
 
 	<div class="adv adv_160x600">
@@ -36,3 +37,13 @@
 	</div>
 
 <?php endif; ?>
+
+*/
+?>
+
+<div class="adv adv_160x600">
+	<a href="#">
+		
+	 <img src="<?php echo get_template_directory_uri(); ?>/img/z_lixo/adv05.jpg" />
+	</a>
+</div><!-- .block_cntt -->

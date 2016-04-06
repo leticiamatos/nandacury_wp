@@ -1,4 +1,5 @@
 <div class="facebook plugin">
+	<h3 class="plugin_title">Facebook</h3>
 			
 	<div class="fb-page" 
 		data-href="https://www.facebook.com/blogdascabeludas/" 

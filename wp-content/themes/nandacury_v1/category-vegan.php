@@ -51,7 +51,7 @@
 <div id="tabs">
 
 <!-- Categories list -->
-	<ul class="subcategory list">
+	<ul class="subcategory list block_cntt">
 		<li class="item"><a class="link" href="#tabs-00">Todas</a></li>
 		<?php 
 			foreach ($cats as $cat):
@@ -69,6 +69,7 @@
 					<?php get_template_part('advertising', '160x600'); ?>
 
 					<?php get_template_part('loop', 'category'); ?>
+				</div>
 			</div><!-- .block_cntt -->
 		</section><!-- .block_03 -->
 		<?php get_template_part('pagination'); ?>

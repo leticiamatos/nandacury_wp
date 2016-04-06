@@ -597,7 +597,7 @@ function html5wp_pagination()
 // Custom Excerpts
 function html5wp_index($length) // Create 20 Word Callback for Index page Excerpts, call using html5wp_excerpt('html5wp_index');
 {
-    return 8;
+    return 12;
 }
 
 // Create 40 Word Callback for Custom Post Excerpts, call using html5wp_excerpt('html5wp_custom_post');
@@ -627,7 +627,8 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
 function html5_blank_view_article($more)
 {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
+    //return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
+    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">Leia Mais</a>';
 }
 
 // Remove Admin bar
@@ -835,6 +836,8 @@ $pg_img_cat03 = 110;
 // Categoria 04 - Vegan
 $pg_img_cat04 = 112;
 
+// Categoria Imprensa
+$cat_impr = 14;
 
 // Get Post Content and Title
 

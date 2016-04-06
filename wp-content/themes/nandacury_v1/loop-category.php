@@ -10,9 +10,17 @@
 
 	<?php endif; ?>
 
+	<?php if ($n == 8): ?>
+		<div class="even">
+			<?php get_template_part('advertising', '470x60'); ?>
+		</div>
+	<?php endif; ?>
+
 	<?php if ($n == 9): ?>
 		
-		<?php get_template_part('advertising', '470x60'); ?>
+		<div class="odd">	
+			<?php get_template_part('advertising', '470x60'); ?>
+		</div>
 
 	<?php endif; ?>
 
